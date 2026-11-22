@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lisa Mtshali — UX/UI Designer</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F4EF}
+html{scroll-behavior:smooth}
+a{color:#2F4E3B}a:hover{color:#1C3326}
+.lift{transition:transform .3s ease, box-shadow .3s ease}
+.lift:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(28,31,27,.35)}
+.zoom{overflow:hidden}
+.zoom img{transition:transform .6s ease}
+.zoom:hover img,.zoom:focus-visible img{transform:scale(1.04)}
+.pill{transition:background-color .2s ease, color .2s ease, transform .15s ease}
+.pill:hover{transform:translateY(-2px)}
+.pill:active{transform:scale(.97)}
+.arrow svg{transition:transform .25s ease}
+.arrow:hover svg{transform:translate(3px,-3px)}
+.word{animation:rise .5s ease both}
+.pop{animation:fadein .35s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+button:focus-visible,a:focus-visible{outline:3px solid #9C3F61;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.lift,.zoom img,.pill,.arrow svg{transition:none}.lift:hover,.pill:hover,.zoom:hover img{transform:none}.word,.pop{animation:none}}
+</style>
+</helmet>
+<div style="background: #F5F4EF; color: #1C1F1B; font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 17px; line-height: 1.6; position: relative">
+
+  <header style="max-width: 1200px; margin: 0 auto; padding: 28px clamp(20px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
+    <a href="#top" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: #1C1F1B; text-decoration: none">
+      <span aria-hidden="true" style="width: 34px; height: 34px; border-radius: 50%; background: {{accent}}; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; font-size: 15px">LM</span>
+      Lisa Mtshali
+    </a>
+    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 8px">
+      <a href="#work" style="padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; color: #1C1F1B; text-decoration: none; font-weight: 500">Work</a>
+      <a href="#capabilities" style="padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; color: #1C1F1B; text-decoration: none; font-weight: 500">Capabilities</a>
+      <a href="#journey" style="padding: 10px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; color: #1C1F1B; text-decoration: none; font-weight: 500">Journey</a>
+      <a class="pill" href="#contact" style="padding: 10px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; background: {{accent}}; color: #FFFFFF; border-radius: 999px; text-decoration: none; font-weight: 600">Get in touch</a>
+    </nav>
+  </header>
+
+  <section id="top" style="max-width: 1200px; margin: 0 auto; padding: clamp(40px, 8vw, 104px) clamp(20px, 5vw, 56px) clamp(56px, 8vw, 104px); display: flex; flex-wrap: wrap; gap: clamp(36px, 5vw, 64px); align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 28px; flex: 999 1 560px; min-width: 0">
+      <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9C3F61">UX · UI Designer — Cape Town</p>
+      <h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(40px, 6.4vw, 84px); line-height: 1.04; letter-spacing: -0.03em">Calm digital products for <span style="display: inline-block; min-width: 6ch"><sc-for list="{{words}}" as="w" hint-placeholder-count="1"><span class="word" style="display: inline-block; color: {{accent}}; border-bottom: 0.08em solid #E7B9C9">{{w.text}}</span></sc-for></span></h1>
+      <p style="margin: 0; font-size: clamp(18px, 2vw, 21px); color: #454A43; max-width: 36em">I'm a psychology graduate turned UX/UI designer. I study how people think and behave, then design interfaces that feel quiet, clear and easy to trust.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
+        <a class="pill" href="#work" style="padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; background: #1C1F1B; color: #F5F4EF; border-radius: 999px; text-decoration: none; font-weight: 600">See selected work</a>
+        <button class="pill" type="button" onClick="{{copyEmail}}" style="padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1.5px solid #1C1F1B; color: #1C1F1B; border-radius: 999px; font: inherit; font-weight: 600; cursor: pointer">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>
+          <span aria-live="polite">{{emailLabel}}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="lift" style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px; flex: 1 1 320px; min-width: 0">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+        <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9C3F61">Psychology in practice</p>
+        <p style="margin: 0; font-size: 13px; color: #5A5F57">{{tipCount}}</p>
+      </div>
+      <sc-for list="{{tips}}" as="t" hint-placeholder-count="1">
+        <div class="pop" style="display: flex; flex-direction: column; gap: 10px; min-height: 170px">
+          <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 28px; line-height: 1.15; letter-spacing: -0.02em">{{t.name}}</p>
+          <p style="margin: 0; color: #454A43; font-size: 16px">{{t.body}}</p>
+        </div>
+      </sc-for>
+      <button class="pill" type="button" onClick="{{nextTip}}" style="align-self: flex-start; padding: 12px 20px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; background: #E8EDE3; color: #1C3326; border: 0; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"></path><path d="M4 20 21 3"></path><path d="M21 16v5h-5"></path><path d="m15 15 6 6"></path><path d="M4 4l5 5"></path></svg>
+        Shuffle principle
+      </button>
+    </div>
+  </section>
+
+  <section id="work" style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px) clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: clamp(48px, 7vw, 88px)">
+    <div style="display: flex; flex-direction: column; gap: 20px; border-top: 1px solid #D6D4CB; padding-top: 28px">
+      <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px">
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em">Selected projects</h2>
+        <p style="margin: 0; color: #5A5F57" aria-live="polite">{{countLabel}}</p>
+      </div>
+      <div role="group" aria-label="Filter projects" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+          <button class="pill" type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="padding: 10px 18px; min-height: 44px; border-radius: 999px; border: 1.5px solid #1C1F1B; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{show.rooted}}" hint-placeholder-val="{{ true }}">
+    <article class="pop" style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C3F61">01 · Brand · Moodboard · Landing page</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; line-height: 1.15">Rooted: Earth &amp; Chakra Wellness</h3>
+        <p style="margin: 0; color: #454A43">Brand direction and landing page for a wellness festival. An earth, leaf and crystal palette, arched and round frames and plenty of open space give the brand a slow, grounded feel, carried through to the live page under the line "Healing that begins with you, for you."</p>
+        <a class="arrow" href="https://veto-good-96705460.figma.site/" style="align-self: flex-start; padding: 12px 0; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; font-weight: 600">View live landing page
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+        </a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+        <div id="rooted-board" style="position: relative; width: 100%; max-height: {{rootedMax}}; overflow: hidden; border-radius: 20px">
+          <dc-import name="Rooted-Moodboard" hint-size="100%,1500px"></dc-import>
+          <sc-if value="{{rootedFade}}" hint-placeholder-val="{{ true }}">
+            <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 140px; background: linear-gradient(rgba(245,244,239,0), #F5F4EF); pointer-events: none"></div>
+          </sc-if>
+        </div>
+        <button class="pill" type="button" onClick="{{toggleRooted}}" aria-expanded="{{rootedExpanded}}" aria-controls="rooted-board" style="padding: 12px 22px; min-height: 44px; display: inline-flex; align-items: center; background: transparent; border: 1.5px solid #1C1F1B; color: #1C1F1B; border-radius: 999px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer">{{rootedLabel}}</button>
+      </div>
+    </article>
+    </sc-if>
+
+    <sc-if value="{{show.learnmate}}" hint-placeholder-val="{{ true }}">
+    <article class="pop" style="display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px)">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C3F61">02 · UX research · Accessibility · Prototype</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; line-height: 1.15">LearnMate — AI-powered adaptive learning for the digital divide</h3>
+        <p style="margin: 0; color: #454A43">A research report and concept for learners in low-income rural South Africa who depend on shared smartphones, prepaid data and an unreliable signal. I explored whether adaptive AI can widen access to learning, or quietly create a new kind of digital inequality, then designed a mobile-first, offline-first platform around what I found.</p>
+        <p style="margin: 0; font-size: 15px; color: #5A5F57">UXTE8412 · Research report, concept and accessibility refinement · Hypothetical scenario built on secondary research</p>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 24px; padding: clamp(22px, 3vw, 36px); display: flex; flex-direction: column; gap: 22px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9C3F61">The problem</p>
+          <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.01em">Access to content is not the same as access to learning.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px">
+          <div style="background: #F5F4EF; border-radius: 16px; padding: 18px 20px"><p style="margin: 0 0 4px; font-weight: 600">Shared phones</p><p style="margin: 0; font-size: 15px; color: #454A43">One device for the whole family.</p></div>
+          <div style="background: #F5F4EF; border-radius: 16px; padding: 18px 20px"><p style="margin: 0 0 4px; font-weight: 600">Costly data</p><p style="margin: 0; font-size: 15px; color: #454A43">Small prepaid bundles run out fast.</p></div>
+          <div style="background: #F5F4EF; border-radius: 16px; padding: 18px 20px"><p style="margin: 0 0 4px; font-weight: 600">Weak signal</p><p style="margin: 0; font-size: 15px; color: #454A43">Lessons stop when the network drops.</p></div>
+          <div style="background: #F5F4EF; border-radius: 16px; padding: 18px 20px"><p style="margin: 0 0 4px; font-weight: 600">Little 1-on-1 help</p><p style="margin: 0; font-size: 15px; color: #454A43">No tutor, and teachers stretched thin.</p></div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
+        <div style="background: #F3E4E9; border-radius: 24px; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8A3555">Persona</p>
+          <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 26px; line-height: 1.15">Thando, 16</p>
+          <p style="margin: 0; font-size: 15px; color: #5A3343; font-weight: 500">Grade 10 · Rural Eastern Cape · Shared Android phone</p>
+          <p style="margin: 0; color: #1C1F1B">Enjoys learning but struggles with maths and can't always afford data. Her goal: understand algebra and prepare for a test without using too much data.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px">
+            <span style="padding: 6px 12px; border-radius: 999px; background: #FFFFFF; font-size: 14px; font-weight: 500">Simple</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: #FFFFFF; font-size: 14px; font-weight: 500">Affordable</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: #FFFFFF; font-size: 14px; font-weight: 500">Offline-first</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: #FFFFFF; font-size: 14px; font-weight: 500">Encouraging</span>
+          </div>
+        </div>
+        <div style="background: #2F4E3B; color: #F5F4EF; border-radius: 24px; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 16px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #F3D4DF">The idea — AI in two layers</p>
+          <p style="margin: 0; color: #DCE5DD">Advanced AI can't always run offline on a low-cost phone, so LearnMate splits it in two and still works with little or no internet.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px">
+            <div style="background: #3D6049; border-radius: 16px; padding: 16px 18px"><p style="margin: 0 0 6px; font-weight: 600">On-device · offline</p><p style="margin: 0; font-size: 15px; color: #DCE5DD">A quick check finds her level, questions get easier or harder, hints and progress tracking.</p></div>
+            <div style="background: #3D6049; border-radius: 16px; padding: 16px 18px"><p style="margin: 0 0 6px; font-weight: 600">Cloud assistant · by choice</p><p style="margin: 0; font-size: 15px; color: #DCE5DD">Step-by-step explanations in her home language, checked against the curriculum.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <button class="zoom" type="button" onClick="{{open.lmstory}}" aria-label="Enlarge the LearnMate storyboard" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+          <img src="./assets/e9a2bc54ebd90afd1b8e0303b89c7639.jpg" alt="Six-panel storyboard of Thando's two days using LearnMate, from not understanding her homework to feeling ready for the test" style="display: block; width: 100%; height: auto">
+        </button>
+        <figcaption style="font-size: 15px; color: #5A5F57">Storyboard — Thando's two days, showing where the AI steps in: finding her level, working offline, spotting the pattern in her mistakes and explaining in isiXhosa.</figcaption>
+      </figure>
+
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px">
+          <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -0.01em">Key screens, annotated</p>
+          <div role="tablist" aria-label="LearnMate screens" style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{lmTabs}}" as="lt" hint-placeholder-count="5">
+              <button class="pill" type="button" role="tab" aria-selected="{{lt.pressed}}" onClick="{{lt.pick}}" style="padding: 8px 16px; min-height: 44px; border-radius: 999px; border: 0; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{lt.bg}}; color: {{lt.fg}}">{{lt.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <sc-for list="{{lmShot}}" as="ls" hint-placeholder-count="1">
+          <figure class="pop" role="tabpanel" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+            <button class="zoom" type="button" onClick="{{open.lmshot}}" aria-label="Enlarge this screen" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+              <img src="{{ls.src}}" alt="{{ls.alt}}" style="display: block; width: 100%; height: auto">
+            </button>
+            <figcaption style="font-size: 15px; color: #5A5F57">{{ls.caption}}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px; align-items: start">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9C3F61">UX principles in action</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Visibility of status</span>
+            <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Low cognitive load</span>
+            <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Feedback &amp; recovery</span>
+            <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Progressive disclosure</span>
+            <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">User control &amp; privacy</span>
+            <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Touch &amp; inclusive design</span>
+          </div>
+          <p style="margin: 0; font-size: 15px; color: #5A5F57">Grounded in Nielsen, Norman, Sweller and Fitts.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9C3F61">Ethics — risk and response</p>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+            <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 14px; padding: 14px 16px"><p style="margin: 0 0 4px; font-weight: 600; font-size: 15px">Children's data</p><p style="margin: 0; font-size: 14px; color: #454A43">POPIA consent; first name only, data stays on the phone.</p></div>
+            <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 14px; padding: 14px 16px"><p style="margin: 0 0 4px; font-weight: 600; font-size: 15px">Bias &amp; accuracy</p><p style="margin: 0; font-size: 14px; color: #454A43">Curriculum checks and a report button.</p></div>
+            <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 14px; padding: 14px 16px"><p style="margin: 0 0 4px; font-weight: 600; font-size: 15px">Over-reliance</p><p style="margin: 0; font-size: 14px; color: #454A43">Hints, not answers; teachers stay involved.</p></div>
+            <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 14px; padding: 14px 16px"><p style="margin: 0 0 4px; font-weight: 600; font-size: 15px">Access &amp; equity</p><p style="margin: 0; font-size: 14px; color: #454A43">Offline-first, low-data design.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid #D6D4CB; padding-top: clamp(28px, 4vw, 44px); display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px)">
+        <div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+          <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9C3F61">Part 2 · Accessibility refinement</p>
+          <h4 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(24px, 2.8vw, 32px); letter-spacing: -0.02em; line-height: 1.15">Designing LearnMate for learners with disabilities</h4>
+          <p style="margin: 0; color: #454A43">My first concept tackled data, devices and signal, but it hadn't been designed with learners with disabilities in mind. Guided by the social model of disability, which says people are disabled by barriers in design rather than by their impairments, I audited my own prototype, mapped who it left out and rebuilt it around accessibility.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(20px, 3vw, 36px); align-items: center">
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.01em">1. Auditing my own prototype</p>
+            <p style="margin: 0; color: #454A43">I checked all five wireframes against WCAG 2.2 Level AA, the seven principles of Universal Design and South Africa's National Strategic Framework on Universal Design and Access. I measured the contrast of every label and icon and looked for sensory, cognitive, physical and situational barriers.</p>
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+              <div style="background: #F3E4E9; border-radius: 14px; padding: 14px 16px"><p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 26px; color: #8A3555">2.85:1</p><p style="margin: 0; font-size: 14px; color: #1C1F1B">Menu labels</p></div>
+              <div style="background: #F3E4E9; border-radius: 14px; padding: 14px 16px"><p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 26px; color: #8A3555">2.4:1</p><p style="margin: 0; font-size: 14px; color: #1C1F1B">Menu icons</p></div>
+              <div style="background: #F3E4E9; border-radius: 14px; padding: 14px 16px"><p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 26px; color: #8A3555">3.5:1</p><p style="margin: 0; font-size: 14px; color: #1C1F1B">Question counter</p></div>
+              <div style="background: #F3E4E9; border-radius: 14px; padding: 14px 16px"><p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 26px; color: #8A3555">3.2:1</p><p style="margin: 0; font-size: 14px; color: #1C1F1B">Hint counter</p></div>
+            </div>
+            <p style="margin: 0; font-size: 15px; color: #5A5F57">WCAG asks for at least 4.5:1 for text and 3:1 for icons. The audit also found no read-aloud or text-size control, typed-only answers, a hidden microphone and only one home-language option.</p>
+          </div>
+          <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+            <button class="zoom" type="button" onClick="{{open.audit}}" aria-label="Enlarge the annotated accessibility audit" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+              <img src="./assets/0ed2b3414525b8cf2eb12c0435f9be77.png" alt="Accessibility audit of the LearnMate dashboard, with barriers outlined in red and strengths in green" style="display: block; width: 100%; height: auto">
+            </button>
+            <figcaption style="font-size: 15px; color: #5A5F57">Audit annotations: red marks a barrier, green marks what already worked.</figcaption>
+          </figure>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.01em">2. Two new personas</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
+            <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 24px; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 10px">
+              <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.15">Lwazi, 15</p>
+              <p style="margin: 0; font-size: 15px; color: #5A3343; font-weight: 500">Grade 9 · Rural KwaZulu-Natal · isiZulu · Low vision</p>
+              <p style="margin: 0; color: #1C1F1B">Has albinism and reads big, dark text with the phone close to his face. Borrows his grandmother's basic phone and wants to revise Natural Sciences without asking anyone to read to him.</p>
+            </div>
+            <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 24px; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 10px">
+              <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.15">Palesa, 17</p>
+              <p style="margin: 0; font-size: 15px; color: #5A3343; font-weight: 500">Grade 11 · Rural Free State · seSotho · Dyslexia</p>
+              <p style="margin: 0; color: #1C1F1B">Understands ideas quickly when they're explained aloud, but reads English slowly. Shares one phone with her family and gets about 20 minutes to study Maths Literacy.</p>
+            </div>
+          </div>
+          <p style="margin: 0; font-size: 15px; color: #5A5F57">Their journey maps showed the cascading effect of each barrier: Lwazi needing help on the very first screen, and the AI placing Palesa too low because it measured her reading speed, not her understanding.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px">
+            <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.01em">3. The refined prototype</p>
+            <div role="tablist" aria-label="Refined LearnMate screens" style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{lm2Tabs}}" as="rt" hint-placeholder-count="6">
+                <button class="pill" type="button" role="tab" aria-selected="{{rt.pressed}}" onClick="{{rt.pick}}" style="padding: 8px 16px; min-height: 44px; border-radius: 999px; border: 0; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{rt.bg}}; color: {{rt.fg}}">{{rt.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <sc-for list="{{lm2Shot}}" as="rs" hint-placeholder-count="1">
+            <figure class="pop" role="tabpanel" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+              <button class="zoom" type="button" onClick="{{open.lm2shot}}" aria-label="Enlarge this refined screen" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+                <img src="{{rs.src}}" alt="{{rs.alt}}" style="display: block; width: 100%; height: auto">
+              </button>
+              <figcaption style="font-size: 15px; color: #5A5F57">{{rs.caption}}</figcaption>
+            </figure>
+          </sc-for>
+          <p style="margin: 0; font-size: 15px; color: #5A5F57">An AI-adaptive accessibility profile sits at the centre: what a learner picks on the set-up screen switches features on across the whole app, and the main features still work offline.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px">
+            <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.01em">4. Before and after</p>
+            <div role="tablist" aria-label="Refined journeys" style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{jnyTabs}}" as="jt" hint-placeholder-count="2">
+                <button class="pill" type="button" role="tab" aria-selected="{{jt.pressed}}" onClick="{{jt.pick}}" style="padding: 8px 16px; min-height: 44px; border-radius: 999px; border: 0; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{jt.bg}}; color: {{jt.fg}}">{{jt.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <sc-for list="{{jnyShot}}" as="js" hint-placeholder-count="1">
+            <figure class="pop" role="tabpanel" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+              <button class="zoom" type="button" onClick="{{open.jny}}" aria-label="Enlarge this journey" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+                <img src="{{js.src}}" alt="{{js.alt}}" style="display: block; width: 100%; height: auto">
+              </button>
+              <figcaption style="font-size: 15px; color: #5A5F57">{{js.caption}}</figcaption>
+            </figure>
+          </sc-for>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 24px; padding: clamp(22px, 3vw, 36px); display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+            <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: -0.01em">5. Researching the technology</p>
+            <p style="margin: 0; color: #454A43">I researched established and emerging assistive technologies, then weighed each against South African realities: affordability, connectivity, language diversity, long-term sustainability and cultural acceptance.</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 12px">
+            <sc-for list="{{techs}}" as="tc" hint-placeholder-count="7">
+              <div style="background: #F5F4EF; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px">
+                  <p style="margin: 0; font-weight: 600">{{tc.name}}</p>
+                  <span style="padding: 3px 10px; border-radius: 999px; background: {{tc.tagBg}}; color: {{tc.tagFg}}; font-size: 13px; font-weight: 600">{{tc.kind}}</span>
+                </div>
+                <p style="margin: 0; font-size: 15px; color: #454A43">{{tc.body}}</p>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin: 0; font-size: 15px; color: #5A5F57">Considered but left out: VR headsets (too costly and data-heavy), AI sign-language avatars (not accurate enough, and South African Sign Language is best delivered by Deaf signers) and eye-tracking (needs extra hardware).</p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid #D6D4CB; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.25; letter-spacing: -0.01em; max-width: 30ch">“Technology should adapt to the realities of its users, rather than expecting users to adapt to the limitations of technology.”</p>
+        <p style="margin: 0; color: #454A43; max-width: 44em">Both versions are built on secondary research and haven't yet been tested with learners. Next steps: co-design and test with learners with disabilities, their teachers and organisations such as the South African National Council for the Blind and the Deaf Federation of South Africa, and partner for affordable data and devices.</p>
+      </div>
+    </article>
+    </sc-if>
+
+    <sc-if value="{{show.iec}}" hint-placeholder-val="{{ true }}">
+    <article class="pop" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C3F61">03 · Civic tech · Moodboard · Prototype</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; line-height: 1.15">IEC youth voter registration</h3>
+        <p style="margin: 0; color: #454A43">A visual direction and prototype to get 18–35 year olds in South Africa registered to vote. High-energy colour, a peer-to-peer voice ("We don't wait for change — we vote it in"), real South African faces instead of stock ballot boxes, and messaging built for TikTok, Instagram, X and WhatsApp.</p>
+        <a class="arrow" href="https://iec-voter-prototype.vercel.app/" style="align-self: flex-start; padding: 12px 0; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; font-weight: 600">Try the prototype
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+        </a>
+      </div>
+      <button class="zoom lift" type="button" onClick="{{open.iec}}" aria-label="Enlarge the IEC moodboard" style="padding: 0; border: 0; cursor: zoom-in; background: #1A1426; border-radius: 20px; height: clamp(360px, 48vw, 620px); display: block; width: 100%">
+        <img src="./assets/c4c77379acd983dea6b3262ca8019d61.jpg" alt="IEC youth voter registration moodboard with colour palette, typography, brand voice, imagery and channel guidance" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: top">
+      </button>
+    </article>
+    </sc-if>
+
+    <sc-if value="{{show.flows}}" hint-placeholder-val="{{ true }}">
+    <article class="pop" style="display: flex; flex-direction: column; gap: 24px">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C3F61">04 · Task flows · Wireframes · IEC project</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; line-height: 1.15">User flows &amp; journey maps</h3>
+        <p style="margin: 0; color: #454A43">The research layer behind the IEC prototype: a five-phase youth voter journey and a 12-screen mobile-first flow for preparing for voting day. Designed for simplicity, low data use and easy navigation.</p>
+      </div>
+      <div role="tablist" aria-label="Flow artefacts" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{flowTabs}}" as="ft" hint-placeholder-count="2">
+          <button class="pill" type="button" role="tab" aria-selected="{{ft.pressed}}" onClick="{{ft.pick}}" style="padding: 10px 18px; min-height: 44px; border-radius: 999px; border: 0; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{ft.bg}}; color: {{ft.fg}}">{{ft.label}}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{flowJourney}}" hint-placeholder-val="{{ true }}">
+      <figure class="pop" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <button class="zoom" type="button" onClick="{{open.journey}}" aria-label="Enlarge the youth voter journey" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+          <img src="./assets/835f07a1d365cc1a367d04260a67d9f3.jpg" alt="Youth voter journey diagram across five phases: pre-voting, planning, preparation, voting day and post-voting" style="display: block; width: 100%; height: auto">
+        </button>
+        <figcaption style="font-size: 15px; color: #5A5F57">Youth voter journey — five phases: register, plan, prepare, vote, then track and share.</figcaption>
+      </figure>
+      </sc-if>
+      <sc-if value="{{flowScreens}}" hint-placeholder-val="{{ false }}">
+      <figure class="pop" style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <button class="zoom" type="button" onClick="{{open.flow}}" aria-label="Enlarge the voting day user flow" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+          <img src="./assets/334406a855c5675eb28a0df87648d385.jpg" alt="User flow wireframes: twelve mobile screens for preparing for voting day" style="display: block; width: 100%; height: auto">
+        </button>
+        <figcaption style="font-size: 15px; color: #5A5F57">User flow — registering, checking status, finding a station, setting a reminder and knowing what to bring.</figcaption>
+      </figure>
+      </sc-if>
+    </article>
+    </sc-if>
+
+    <sc-if value="{{show.kauai}}" hint-placeholder-val="{{ true }}">
+    <article class="pop" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center">
+      <button class="zoom lift" type="button" onClick="{{open.kauai}}" aria-label="Enlarge the KAUAI UX analysis" style="padding: 0; cursor: zoom-in; background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; display: block; width: 100%">
+        <img src="./assets/036efb3c7dede22d575d7dd69f9d1fdc.jpg" alt="KAUAI app UX analysis board covering core functionalities, cognitive load, Gestalt principles and core findings" style="display: block; width: 100%; height: auto">
+      </button>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C3F61">05 · Heuristics · Gestalt principles · Findings</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; line-height: 1.15">KAUAI app — UX analysis</h3>
+        <p style="margin: 0; color: #454A43">An evaluation of KAUAI's pre-order, nutrition and loyalty experience through cognitive load and Gestalt principles. Pick an area to see what I found.</p>
+        <div role="group" aria-label="Findings by area" style="display: flex; flex-wrap: wrap; gap: 8px">
+          <sc-for list="{{findings}}" as="fd" hint-placeholder-count="3">
+            <button class="pill" type="button" onClick="{{fd.pick}}" aria-pressed="{{fd.pressed}}" style="padding: 8px 16px; min-height: 44px; border-radius: 999px; border: 1.5px solid #2F4E3B; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{fd.bg}}; color: {{fd.fg}}">{{fd.label}}</button>
+          </sc-for>
+        </div>
+        <sc-for list="{{finding}}" as="fx" hint-placeholder-count="1">
+          <div class="pop" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+            <div style="background: #E8EDE3; border-radius: 14px; padding: 16px 18px">
+              <p style="margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #2F4E3B">Strength</p>
+              <p style="margin: 0; font-size: 16px; color: #1C1F1B">{{fx.good}}</p>
+            </div>
+            <div style="background: #F3E4E9; border-radius: 14px; padding: 16px 18px">
+              <p style="margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8A3555">To improve</p>
+              <p style="margin: 0; font-size: 16px; color: #1C1F1B">{{fx.fix}}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </article>
+    </sc-if>
+
+    <div>
+      <sc-if value="{{show.walk}}" hint-placeholder-val="{{ true }}">
+      <article class="pop" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center">
+        <button class="zoom lift" type="button" onClick="{{open.walk}}" aria-label="Enlarge the Ask Impact walkthrough still" style="padding: 0; border: 0; cursor: zoom-in; background: #1C1F1B; border-radius: 20px; aspect-ratio: 16 / 9; display: block; width: 100%">
+          <img src="./assets/4838db1a7de92dab062fdb31169239fc.jpg" alt="Still from a product walkthrough video titled Ask Impact for Partners" style="display: block; width: 100%; height: 100%; object-fit: cover">
+        </button>
+        <div style="display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C3F61">06 · Multimedia · Graphic design · Video editing</p>
+        <h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(24px, 2.6vw, 30px); letter-spacing: -0.02em; line-height: 1.2">Ask Impact — product walkthrough</h3>
+        <p style="margin: 0; color: #454A43">A guided video tour of what the product does, walking a partner through their dashboard step by step. I brought it together with multimedia, graphic design and video editing in Adobe Creative Suite.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Multimedia</span>
+          <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Graphic design</span>
+          <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Video editing</span>
+          <span style="padding: 8px 14px; border-radius: 999px; background: #E8EDE3; color: #1C3326; font-size: 15px; font-weight: 500">Adobe Creative Suite</span>
+        </div>
+        <a class="arrow" href="https://lisamtshali.netlify.app/" style="align-self: flex-start; padding: 12px 0; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px; font-weight: 600">Watch the full clip
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+        </a>
+        </div>
+      </article>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="capabilities" style="background: #2F4E3B; color: #F5F4EF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px); display: flex; flex-direction: column; gap: 40px">
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em; max-width: 20ch">Research isn't a step. It's an instinct.</h2>
+      <div role="tablist" aria-label="Capabilities" style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{caps}}" as="c" hint-placeholder-count="3">
+          <button class="pill" type="button" role="tab" aria-selected="{{c.pressed}}" onClick="{{c.pick}}" style="padding: 12px 20px; min-height: 48px; border-radius: 999px; border: 1.5px solid #F5F4EF; font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; background: {{c.bg}}; color: {{c.fg}}">{{c.label}}</button>
+        </sc-for>
+      </div>
+      <sc-for list="{{cap}}" as="cp" hint-placeholder-count="1">
+        <div class="pop" role="tabpanel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px; border-top: 1px solid #7F9A88; padding-top: 32px; align-items: start">
+          <p style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-size: clamp(24px, 3vw, 34px); line-height: 1.25; letter-spacing: -0.01em">{{cp.body}}</p>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #F3D4DF">Toolkit</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <sc-for list="{{cp.tools}}" as="tool" hint-placeholder-count="3">
+                <span style="padding: 8px 14px; border-radius: 999px; background: #3D6049; color: #F5F4EF; font-size: 15px; font-weight: 500">{{tool}}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+      <p style="margin: 0; padding-top: 8px; color: #DCE5DD"><span style="font-weight: 600; color: #F5F4EF">Languages</span> — English · isiZulu · seSotho · Afrikaans</p>
+    </div>
+  </section>
+
+  <section id="journey" style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(20px, 5vw, 56px); display: flex; flex-direction: column; gap: 40px">
+    <h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em">Journey</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px">
+      <div class="lift" style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #9C3F61">2026 — 2027 (expected)</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3">Postgraduate diploma, UX/UI design</h3>
+        <p style="margin: 0; color: #5A5F57">Vega School at Emeris, Cape Town</p>
+        <p style="margin: 0; color: #454A43">Part-time diploma applying design thinking to user-centred digital experiences for e-learning and social platforms: personas, user flows and projects built in Figma and Adobe Creative Suite.</p>
+      </div>
+      <div class="lift" style="background: #FFFFFF; border: 1px solid #E2E0D8; border-radius: 20px; padding: clamp(24px, 3vw, 36px); display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #9C3F61">Golden Key International Honours Award, 2022</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3">BSocSci, Psychology &amp; Criminology</h3>
+        <p style="margin: 0; color: #5A5F57">University of the Free State, Bloemfontein</p>
+        <p style="margin: 0; color: #454A43">A strong understanding of human behaviour and societal dynamics, the foundation of my UX practice. Volunteer with the Psychology Student Association.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" style="background: #1C1F1B; color: #F5F4EF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 56px) 40px; display: flex; flex-direction: column; gap: 40px">
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'DM Sans', sans-serif; font-weight: 600; font-size: clamp(36px, 6vw, 72px); line-height: 1.04; letter-spacing: -0.03em; max-width: 14ch">Let's design something calm together.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a class="pill" href="mailto:mtshalilisa7@gmail.com" style="padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; background: #F5F4EF; color: #1C1F1B; border-radius: 999px; text-decoration: none; font-weight: 600">Email me</a>
+        <button class="pill" type="button" onClick="{{copyEmail}}" style="padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; background: transparent; border: 1.5px solid #F5F4EF; color: #F5F4EF; border-radius: 999px; font: inherit; font-weight: 600; cursor: pointer"><span aria-live="polite">{{emailLabel}}</span></button>
+        <a class="pill" href="tel:+27753645732" style="padding: 14px 26px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; border: 1.5px solid #F5F4EF; color: #F5F4EF; border-radius: 999px; text-decoration: none; font-weight: 600">075 364 5732</a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid #44493F; padding-top: 24px; font-size: 15px; color: #B9BDB3">
+        <p style="margin: 0">Cape Town, Western Cape</p>
+        <a href="#top" style="color: #F5F4EF; font-weight: 600">Back to top ↑</a>
+        <p style="margin: 0">© Lisa Mtshali</p>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{lbOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="pop" role="dialog" aria-modal="true" aria-label="{{lb.alt}}" style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 4vw, 56px); box-sizing: border-box">
+      <button type="button" onClick="{{closeLb}}" aria-label="Close enlarged image" style="position: absolute; inset: 0; border: 0; padding: 0; background: rgba(20,22,19,.86); cursor: zoom-out"></button>
+      <figure style="position: relative; margin: 0; max-width: 1200px; width: 100%; max-height: 100%; display: flex; flex-direction: column; gap: 12px; align-items: center">
+        <img src="{{lb.src}}" alt="{{lb.alt}}" style="display: block; max-width: 100%; max-height: 82vh; border-radius: 14px; object-fit: contain; background: #FFFFFF">
+        <figcaption style="color: #F5F4EF; font-size: 15px; text-align: center">{{lb.alt}}</figcaption>
+      </figure>
+      <button class="pill" type="button" onClick="{{closeLb}}" aria-label="Close" style="position: absolute; top: 20px; right: 20px; width: 48px; height: 48px; border-radius: 50%; border: 0; background: #F5F4EF; color: #1C1F1B; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12"></path><path d="M18 6 6 18"></path></svg>
+      </button>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2F4E3B","options":["#2F4E3B","#9C3F61","#1C1F1B","#3B4A7A"]},"rotate":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":12200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { word: 0, tip: 0, filter: 'brand', flow: 'journey', finding: 0, cap: 0, lmScreen: 0, lm2Screen: 0, jny: 0, rootedOpen: false, lb: null, copied: false };
+  }
+  componentDidMount() {
+    var reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (!reduce && (this.props.rotate ?? true)) {
+      this.timer = setInterval(() => this.setState({ word: (this.state.word + 1) % 4 }), 2600);
+    }
+  }
+  componentWillUnmount() {
+    if (this.timer) clearInterval(this.timer);
+    if (this.copyTimer) clearTimeout(this.copyTimer);
+  }
+  renderVals() {
+    var accent = this.props.accent ?? '#2F4E3B';
+    var s = this.state;
+    var words = ['wellness brands.', 'civic tech.', 'real people.', 'calm minds.'];
+    var tips = [
+      { name: 'Recognition over recall', body: 'People find it easier to recognise an option than to remember it. Showing past orders beats asking users to retype them.' },
+      { name: 'Proximity', body: 'Things placed close together read as related. Grouping a label with its price makes a menu scannable at a glance.' },
+      { name: 'Figure-ground', body: 'The eye separates a subject from its background. A high-contrast button lifts the one action that matters off the page.' },
+      { name: 'Selective attention', body: 'We notice only a slice of what is in front of us. Colour-coded anchors guide that slice to where it should go.' },
+      { name: 'Continuity', body: 'The eye follows lines and paths. A checkout that flows in reading order feels shorter than one that zigzags.' },
+      { name: 'Similarity', body: 'Things that look alike feel alike. Consistent icon weights and button shapes tell people what is clickable.' }
+    ];
+    var cats = { rooted: ['brand'], learnmate: ['research'], iec: ['civic'], flows: ['civic'], kauai: ['research'], walk: ['web'] };
+    var show = {};
+    var count = 0;
+    Object.keys(cats).forEach((k) => { show[k] = cats[k].indexOf(s.filter) > -1; if (show[k]) count++; });
+    var pill = (on, onBg, onFg, offBg, offFg) => ({ bg: on ? onBg : offBg, fg: on ? onFg : offFg, pressed: on ? 'true' : 'false' });
+    var filters = [
+      { id: 'brand', label: 'Brand & visual' }, { id: 'civic', label: 'Civic tech' },
+      { id: 'research', label: 'Research' }, { id: 'web', label: 'Multimedia & video' }
+    ].map((f) => Object.assign({}, f, pill(s.filter === f.id, '#1C1F1B', '#F5F4EF', 'transparent', '#1C1F1B'), { pick: () => this.setState({ filter: f.id }) }));
+    var flowTabs = [{ id: 'journey', label: 'Journey map' }, { id: 'screens', label: '12-screen user flow' }]
+      .map((f) => Object.assign({}, f, pill(s.flow === f.id, accent, '#FFFFFF', '#E8EDE3', '#1C3326'), { pick: () => this.setState({ flow: f.id }) }));
+    var findingData = [
+      { label: 'Visual hierarchy', good: 'Strong branding and contrast.', fix: 'Busy menu screens.' },
+      { label: 'Navigation', good: 'Intuitive tab layout.', fix: 'Deeply nested settings.' },
+      { label: 'Architecture', good: 'Clear dietary labelling.', fix: 'Long customisation.' }
+    ];
+    var findings = findingData.map((f, i) => Object.assign({ label: f.label }, pill(s.finding === i, '#2F4E3B', '#FFFFFF', 'transparent', '#2F4E3B'), { pick: () => this.setState({ finding: i }) }));
+    var capData = [
+      { label: 'UX research & testing', body: 'Interviews, personas and usability testing. My psychology background means research isn\u2019t a step, it\u2019s an instinct.', tools: ['Personas', 'User flows', 'Journey maps', 'Accessibility audits (WCAG 2.2)', 'Usability testing'] },
+      { label: 'UI & visual design', body: 'Interfaces, moodboards and brand feel: visually engaging digital experiences that stay calm and legible.', tools: ['Figma', 'Adobe Creative Suite', 'Moodboards'] },
+      { label: 'Prototyping & handoff', body: 'Clickable prototypes and dev-friendly handoff, so what I design is clear to the people who build it.', tools: ['Prototypes', 'Developer handoff', 'Storytelling'] },
+      { label: 'HTML & CSS', body: 'I build and style web pages in HTML and CSS, so I understand how my designs turn into code and can bring them to life myself.', tools: ['HTML', 'CSS', 'Design to code'] }
+    ];
+    var caps = capData.map((c, i) => Object.assign({ label: c.label }, pill(s.cap === i, '#F5F4EF', '#1C3326', 'transparent', '#F5F4EF'), { pick: () => this.setState({ cap: i }) }));
+    var imgs = {
+      iec: { src: './assets/c4c77379acd983dea6b3262ca8019d61.jpg', alt: 'IEC youth voter registration — moodboard' },
+      journey: { src: './assets/835f07a1d365cc1a367d04260a67d9f3.jpg', alt: 'Youth voter journey — five phases' },
+      flow: { src: './assets/334406a855c5675eb28a0df87648d385.jpg', alt: 'User flow — preparing for voting day' },
+      kauai: { src: './assets/036efb3c7dede22d575d7dd69f9d1fdc.jpg', alt: 'KAUAI app — UX analysis' },
+      walk: { src: './assets/4838db1a7de92dab062fdb31169239fc.jpg', alt: 'Product walkthrough — video still' }
+    };
+    var lmData = [
+      { label: 'Dashboard', src: './assets/29b58c66d93895f40aa022b37f458dc3.jpg', alt: 'Annotated wireframe of the LearnMate dashboard', caption: 'Learning dashboard — progress at a glance, pick up where she left off, and the next lesson saved for offline.' },
+      { label: 'Practice', src: './assets/26c99ccef4493ef0d781d02f557cfbc8.jpg', alt: 'Annotated wireframe of adaptive practice', caption: 'Adaptive practice — one question at a time, with feedback that explains and difficulty that adjusts to her.' },
+      { label: 'Support', src: './assets/f382099ec32d855009780e60056613e8.jpg', alt: 'Annotated wireframe of adaptive support after mistakes', caption: 'Adaptive support — friendly error messages, step-by-step breakdowns and a worked example only if she asks.' },
+      { label: 'Assistant', src: './assets/d2e312397697a4254c3b69ba908088ca.jpg', alt: 'Annotated wireframe of the study assistant', caption: 'Study assistant — shows data use per reply, gives hints not answers, and explains in her home language.' },
+      { label: 'Progress', src: './assets/8326ad2ed634f7d85dd99b92fa71cd78.jpg', alt: 'Annotated wireframe of the progress screen', caption: 'Progress — kind labels instead of marks, a suggested next step, and optional sharing with her teacher.' }
+    ];
+    var lmTabs = lmData.map((d, i) => Object.assign({ label: (i + 1) + '. ' + d.label }, pill(s.lmScreen === i, '#1C1F1B', '#F5F4EF', '#E8EDE3', '#1C3326'), { pick: () => this.setState({ lmScreen: i }) }));
+    var lmCur = lmData[s.lmScreen];
+    imgs.lmstory = { src: './assets/e9a2bc54ebd90afd1b8e0303b89c7639.jpg', alt: 'LearnMate storyboard — Thando’s two days' };
+    imgs.lmshot = { src: lmCur.src, alt: 'LearnMate — ' + lmCur.label + ' screen' };
+    var lm2Data = [
+      { label: 'Set-up', src: './assets/e6fae2b317993170c72d09c1908bd38f.png', alt: 'Refined LearnMate accessibility set-up screen with annotations', caption: 'New set-up screen — it reads itself aloud, so learners choose read-aloud, bigger text, simpler words, vibration and their home language before they meet a barrier.' },
+      { label: 'Dashboard', src: './assets/1f42da89de81dab6da8aecc1cbb2790b.png', alt: 'Refined LearnMate dashboard with annotations', caption: 'Dashboard — higher-contrast menu, text-size and read-aloud controls on every screen, and a resume point for learners who share a phone.' },
+      { label: 'Practice', src: './assets/d7705c42543580ef69d29b06fedaa5a5.png', alt: 'Refined LearnMate adaptive practice screen with annotations', caption: 'Practice — questions read aloud with word highlighting, tap-or-say answers, feedback in words, an icon and a vibration, and AI that doesn’t mistake slow reading for weak maths.' },
+      { label: 'Support', src: './assets/88429d66b558692e957207576d16f21b.png', alt: 'Refined LearnMate reading mode screen with annotations', caption: 'Reading mode — explanations split into short parts with wider spacing, a supporting picture and a switch to seSotho.' },
+      { label: 'Assistant', src: './assets/508593d3f9389f4ac1c010d1a14258a5.png', alt: 'Refined LearnMate study assistant screen with annotations', caption: 'Study assistant — a large labelled microphone, replies read aloud and teacher-checked descriptions of diagrams.' },
+      { label: 'Progress', src: './assets/8909d49649f904a93d3cd93286ce2e49.png', alt: 'Refined LearnMate progress screen with annotations', caption: 'Progress — shown in words, percentages and a spoken summary, with an optional 3D Explore mode that always has a text version.' }
+    ];
+    var lm2Tabs = lm2Data.map((d, i) => Object.assign({ label: i + '. ' + d.label }, pill(s.lm2Screen === i, '#1C1F1B', '#F5F4EF', '#E8EDE3', '#1C3326'), { pick: () => this.setState({ lm2Screen: i }) }));
+    var lm2Cur = lm2Data[s.lm2Screen];
+    imgs.lm2shot = { src: lm2Cur.src, alt: 'LearnMate refined — ' + lm2Cur.label + ' screen' };
+    imgs.audit = { src: './assets/0ed2b3414525b8cf2eb12c0435f9be77.png', alt: 'Accessibility audit — LearnMate dashboard' };
+    var jnyData = [
+      { label: 'Lwazi', src: './assets/9c0c8699bab6a58c6e90d31fd11c1239.png', alt: 'Lwazi’s journey before and after the refined prototype', caption: 'Lwazi — the set-up screen reads itself to him, so he starts on his own instead of asking his cousin for help, and the study assistant goes from hardest to most helpful.' },
+      { label: 'Palesa', src: './assets/c61a2dfca647cc4881f3cf094b7951ec.png', alt: 'Palesa’s journey before and after the refined prototype', caption: 'Palesa — with questions read aloud, her level reflects what she understands rather than how fast she reads, and the resume point eases the stress of sharing a phone.' }
+    ];
+    var jnyTabs = jnyData.map((d, i) => Object.assign({ label: d.label }, pill(s.jny === i, '#1C1F1B', '#F5F4EF', '#E8EDE3', '#1C3326'), { pick: () => this.setState({ jny: i }) }));
+    var jnyCur = jnyData[s.jny];
+    imgs.jny = { src: jnyCur.src, alt: jnyCur.alt };
+    var est = { tagBg: '#E8EDE3', tagFg: '#1C3326', kind: 'Established' };
+    var emg = { tagBg: '#F3E4E9', tagFg: '#8A3555', kind: 'Emerging' };
+    var techs = [
+      Object.assign({ name: 'Text-to-speech', body: 'Built into most Android phones and works offline once a voice pack is installed.' }, est),
+      Object.assign({ name: 'Voice input', body: 'Short answers are recognised on the phone, and typing always stays available.' }, est),
+      Object.assign({ name: 'Haptic feedback', body: 'Uses no data. Used alongside words and icons, never on its own.' }, est),
+      Object.assign({ name: 'Multilingual speech AI', body: 'African-language models aren’t reliable yet, so it’s labelled “in testing” and shows what it heard.' }, emg),
+      Object.assign({ name: 'AI-adaptive interface', body: 'Suggests changes to text size, contrast and language, and the learner decides.' }, emg),
+      Object.assign({ name: 'AI image description', body: 'Teacher-checked descriptions offline; AI descriptions are an optional, labelled extra.' }, emg),
+      Object.assign({ name: 'Lightweight 3D', body: 'About 1.2 MB per model, with audio, vibration and a text version instead of a headset.' }, emg)
+    ];
+    var open = {};
+    Object.keys(imgs).forEach((k) => { open[k] = () => this.setState({ lb: k }); });
+    var lb = s.lb ? imgs[s.lb] : { src: '', alt: '' };
+    return {
+      accent: accent,
+      words: [{ text: words[s.word % words.length], key: s.word }],
+      tips: [tips[s.tip % tips.length]],
+      tipCount: ((s.tip % tips.length) + 1) + ' / ' + tips.length,
+      nextTip: () => this.setState({ tip: s.tip + 1 }),
+      filters: filters, show: show, lmTabs: lmTabs, lmShot: [lmCur],
+      lm2Tabs: lm2Tabs, lm2Shot: [lm2Cur], jnyTabs: jnyTabs, jnyShot: [jnyCur], techs: techs,
+      rootedMax: s.rootedOpen ? 'none' : '520px', rootedFade: !s.rootedOpen, rootedExpanded: s.rootedOpen ? 'true' : 'false',
+      rootedLabel: s.rootedOpen ? 'Show less' : 'View full moodboard',
+      toggleRooted: () => this.setState({ rootedOpen: !s.rootedOpen }),
+      countLabel: count + (count === 1 ? ' project' : ' projects') + ' in this section',
+      flowTabs: flowTabs, flowJourney: s.flow === 'journey', flowScreens: s.flow === 'screens',
+      findings: findings, finding: [findingData[s.finding]],
+      caps: caps, cap: [capData[s.cap]],
+      open: open, lbOpen: !!s.lb, lb: lb, closeLb: () => this.setState({ lb: null }),
+      emailLabel: s.copied ? 'Email copied!' : 'Copy my email',
+      copyEmail: () => {
+        var done = () => { this.setState({ copied: true }); if (this.copyTimer) clearTimeout(this.copyTimer); this.copyTimer = setTimeout(() => this.setState({ copied: false }), 2200); };
+        try { navigator.clipboard.writeText('mtshalilisa7@gmail.com').then(done, () => { window.location.href = 'mailto:mtshalilisa7@gmail.com'; }); }
+        catch (e) { window.location.href = 'mailto:mtshalilisa7@gmail.com'; }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
